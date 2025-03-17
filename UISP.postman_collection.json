@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "8d397b0d-444d-47d4-bc1b-25293c96f524",
+		"name": "UISP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34249689"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"pnhattpn@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"fullname\": \"nhat dep trai\",\r\n    \"address\": \"earth\",\r\n    \"roleName\": \"ADMIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/register",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"pnhattpn@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Account",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwbmhhdHRwbkBnbWFpbC5jb20iLCJwZXJtaXNzaW9uIjpbIlJPTEVfVVNFUl9DUkVBVEUiLCJST0xFX1VTRVJfVVBEQVRFIl0sImV4cCI6MTc0MjIzMTQ3NiwiaWF0IjoxNzQyMTQxNDc2LCJ1c2VyIjp7ImlkIjozNCwiZW1haWwiOiJwbmhhdHRwbkBnbWFpbC5jb20iLCJuYW1lIjpudWxsfX0.SctOLR67B_9ix3pjRLug0zAym2l6LWyTM9Af7_TdfLo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/auth/account",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwbmhhdHRwbkBnbWFpbC5jb20iLCJwZXJtaXNzaW9uIjpbIlJPTEVfVVNFUl9DUkVBVEUiLCJST0xFX1VTRVJfVVBEQVRFIl0sImV4cCI6MTc0MjIzMTI5NywiaWF0IjoxNzQyMTQxMjk3LCJ1c2VyIjp7ImlkIjozNCwiZW1haWwiOiJwbmhhdHRwbkBnbWFpbC5jb20iLCJuYW1lIjpudWxsfX0.TMAC_nO4l_4tzPfikL9Y0mzT8eK7DZVkMiFPrYe3_f4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/auth/refresh",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwbmhhdHRwbkBnbWFpbC5jb20iLCJwZXJtaXNzaW9uIjpbIlJPTEVfVVNFUl9DUkVBVEUiLCJST0xFX1VTRVJfVVBEQVRFIl0sImV4cCI6MTc0MjIzMTQ3NiwiaWF0IjoxNzQyMTQxNDc2LCJ1c2VyIjp7ImlkIjozNCwiZW1haWwiOiJwbmhhdHRwbkBnbWFpbC5jb20iLCJuYW1lIjpudWxsfX0.SctOLR67B_9ix3pjRLug0zAym2l6LWyTM9Af7_TdfLo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/user/pnhattpn@gmail.com",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"user",
+						"pnhattpn@gmail.com"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

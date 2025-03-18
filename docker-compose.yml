@@ -3,7 +3,6 @@ services:
   app:
     build: .
     volumes:
-      - .:/app
       - ~/.m2:/root/.m2
     environment:
       SPRING_PROFILES_ACTIVE: docker
@@ -12,6 +11,11 @@ services:
     depends_on:
       - db
       - redis
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /app
 
   db:
     image: postgres:17

@@ -18,7 +18,7 @@ public class AccountController {
     @DeleteMapping("/user/{email}")
     @ApiMessage("Delete User")
     public ResponseEntity<String> deleteUserByEmail(@PathVariable String email) {
-        System.out.println(email + "nono");
+        System.out.println(email + " 1277");
         boolean deleted = userService.deleteUserByEmail(email);
         System.out.println(email + " deleted: " + deleted);
         if (deleted) {

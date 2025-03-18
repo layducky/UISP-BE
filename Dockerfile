@@ -8,17 +8,15 @@ COPY pom.xml .
 RUN mvn dependency:go-offline
 
 # Copy source code
-COPY src ./src
-
-# Package the application
-RUN mvn clean package -DskipTests
+COPY src  ./src/
 
 # Use a minimal runtime image
-FROM eclipse-temurin:17-jdk
+FROM maven:3.9.6-eclipse-temurin-17
 
 # Copy JAR from build stage
-COPY --from=builder /app/target/*.jar app.jar
+COPY --from=builder /app /app
 
-# Run the application
-CMD ["java", "-jar", "/app.jar"]
+# Chạy Spring Boot
+WORKDIR /app
+CMD ["mvn", "spring-boot:run"]
 
